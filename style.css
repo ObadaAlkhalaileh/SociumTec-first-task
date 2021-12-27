@@ -15,13 +15,17 @@ body {
   height: 100vh;
   object-fit: cover;
   z-index: -1;
-  opacity: .5;
+  opacity: 0.5;
+  background-color: black;
 }
 
 .header {
   background-color: white;
   display: flex;
   padding: 8px 24px;
+}
+.header img:hover {
+  cursor: pointer;
 }
 .header .header-part {
   width: 100%;
@@ -50,13 +54,22 @@ body {
 .small-part1 ul li a {
   text-decoration: none;
   color: #ef7998;
-
+}
+.small-part1 ul li a:hover {
+  color: black;
+  transition: all 0.5s;
 }
 
-.cart{
+.cart {
   border: solid black 1px;
   border-radius: 3px;
-  padding: 7px;
+  padding: 9px;
+}
+.cart:hover {
+  cursor: pointer;
+  background-color: #ef7998;
+  color: white;
+  border: #ef7998;
 }
 
 .poster {
@@ -67,32 +80,71 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   text-align: center;
   color: black;
 }
 
-.poster span{
+.poster span {
   font-size: 3.2rem;
   color: #ef7998;
 }
 
-.poster button{
+.main-button {
   font-size: 2rem;
   padding: 6px 12px;
   background-color: transparent;
   border: solid black;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
-.poster button:hover{
+.main-button:hover {
+  cursor: pointer;
   background-color: black;
   color: #ef7998;
+  transition: all 0.25s;
 }
 
 .about {
   height: 60vh;
   background-color: white;
+  display: flex;
+  align-content: center;
+}
+
+.about-flex {
+  display: flex;
+  width: 1080px;
+  margin: auto;
+}
+.about-flex img {
+  height: 405px;
+  outline: solid 8px #f9e494;
+}
+/* .about-flex div{} */
+.about p {
+  text-align: left;
+}
+.about span {
+  font-size: 3.2rem;
+  color: #ef7998;
+}
+.about .main-button {
+  font-size: 1.5rem;
+  padding: 5px 10px;
+  background-color: transparent;
+  border: solid black 1px;
+  border-radius: 4px;
+}
+.about .main-button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: #ef7998;
+  transition: all 0.25s;
+}
+.about p {
+  margin: 30px 0px;
+  width: 75%;
 }
 .products {
   height: 700px;
