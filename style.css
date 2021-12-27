@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.header,
+.poster,
+.products,
+.about {
+  border: black solid;
+}
+
+.header{height: 70px;}
+.poster{height: calc(100vh - 70px);}
+.about{height: 60vh;}
+.products{height: 700px;}
