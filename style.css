@@ -3,15 +3,32 @@
 }
 body {
   margin: 0;
+  /* background-image: url("./bg1.jpg");
+  background-repeat: repeat-x;
+  background-size: auto 100vh;
+  background-position-x: center; */
 }
-.header,
-.poster,
-.products,
-.about {
-  border: black solid;
+.bg-image {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
 }
 
-.header{height: 70px;}
-.poster{height: calc(100vh - 70px);}
-.about{height: 60vh;}
-.products{height: 700px;}
+.header {
+  height: 70px;
+  background-color: white;
+}
+.poster {
+  height: calc(100vh - 70px);
+}
+.about {
+  height: 60vh;
+  background-color: white;
+}
+.products {
+  height: 700px;
+  background-color: #eeeeee;
+}
