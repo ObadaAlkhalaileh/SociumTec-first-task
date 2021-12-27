@@ -18,6 +18,7 @@ body {
   background-color: white;
   display: flex;
   padding: 8px 24px;
+  transition: .5 ease;
 }
 .header img:hover {
   cursor: pointer;
@@ -27,6 +28,7 @@ header .fa-bars {
   color: #ef7998;
   display: none;
 }
+
 .header .header-part {
   width: 100%;
   display: flex;
@@ -122,23 +124,27 @@ header .fa-bars {
   height: 405px;
   object-fit: contain;
   outline: solid 8px #f9e494;
+  transition: 1s ease;
+}
+.about-flex img:hover {
+  outline-offset: 20px;
 }
 /* .about-flex div{} */
 .about p {
   text-align: left;
 }
-.about span {
+.about span, .products span {
   font-size: 3.2rem;
   color: #ef7998;
 }
-.about .main-button {
-  font-size: 1.5rem;
-  padding: 5px 10px;
+.about .main-button, .products .main-button {
+  font-size: 1.3rem;
+  padding: 4px 9px;
   background-color: transparent;
   border: solid black 1px;
   border-radius: 4px;
 }
-.about .main-button:hover {
+.about .main-button:hover, .products .main-button:hover {
   cursor: pointer;
   background-color: black;
   color: #ef7998;
@@ -149,10 +155,49 @@ header .fa-bars {
   width: 75%;
 }
 .products {
-  height: 700px;
   background-color: #eeeeee;
 }
 
+.products .main-flex-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+.products .main-flex-container>h1{
+  margin: 35px 0;
+}
+.products .sub-flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 35px;
+  row-gap: 12px;
+  justify-content: center;
+}
+.products .search-box{
+  margin: 15px 0;
+  width: 75vw;
+  display: flex;
+  font-size: 1rem;
+}
+.products .search-box>i{
+  padding: 10px;
+  background-color: #ef7998;;
+}
+.products .search-box>input{
+  flex-grow: 1;
+}
+.products .cards-cont{
+  width: 75vw;
+  margin: auto;
+}
+.products .cards-cont .card{
+  width: inherit;
+}
+.products .cards-cont .card>img{
+  width: 100%;
+  object-fit: contain;
+}
 @media screen and (max-width: 755px) {
   .about {
     height: auto;
@@ -162,7 +207,7 @@ header .fa-bars {
     align-items: center;
   }
   .about-flex > div {
-    width: 60vw;
+    width: 75vw;
     margin-top: 50px;
   }
   .about-flex > div > p {
@@ -170,7 +215,7 @@ header .fa-bars {
   }
   .about-flex img {
     align-self: center;
-    width: 60vw;
+    width: 75vw;
     height: auto;
     margin: 80px 0;
   }
