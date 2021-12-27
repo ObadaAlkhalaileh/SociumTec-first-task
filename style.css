@@ -15,10 +15,10 @@ body {
   height: 100vh;
   object-fit: cover;
   z-index: -1;
+  opacity: .5;
 }
 
 .header {
-  /* height: 70px; */
   background-color: white;
   display: flex;
   padding: 8px 24px;
@@ -28,11 +28,10 @@ body {
   display: flex;
 }
 .small-part1 {
-  /* padding: 1rem; */
   flex-grow: 1;
 }
 .small-part2 {
-  width: 400px;
+  width: 500px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -50,6 +49,8 @@ body {
 }
 .small-part1 ul li a {
   text-decoration: none;
+  color: #ef7998;
+
 }
 
 .cart{
@@ -61,6 +62,34 @@ body {
 .poster {
   height: calc(100vh - 70px);
 }
+
+.poster div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  color: black;
+}
+
+.poster span{
+  font-size: 3.2rem;
+  color: #ef7998;
+}
+
+.poster button{
+  font-size: 2rem;
+  padding: 6px 12px;
+  background-color: transparent;
+  border: solid black;
+  border-radius: 3px;
+}
+
+.poster button:hover{
+  background-color: black;
+  color: #ef7998;
+}
+
 .about {
   height: 60vh;
   background-color: white;
