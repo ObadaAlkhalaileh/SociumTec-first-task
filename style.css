@@ -18,9 +18,46 @@ body {
 }
 
 .header {
-  height: 70px;
+  /* height: 70px; */
   background-color: white;
+  display: flex;
+  padding: 8px 24px;
 }
+.header .header-part {
+  width: 100%;
+  display: flex;
+}
+.small-part1 {
+  /* padding: 1rem; */
+  flex-grow: 1;
+}
+.small-part2 {
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.small-part1 ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+.small-part1 ul li {
+  padding: 0 10px;
+  font-size: 1.5rem;
+}
+.small-part1 ul li a {
+  text-decoration: none;
+}
+
+.cart{
+  border: solid black 1px;
+  border-radius: 3px;
+  padding: 7px;
+}
+
 .poster {
   height: calc(100vh - 70px);
 }
