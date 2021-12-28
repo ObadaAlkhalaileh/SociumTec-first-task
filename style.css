@@ -283,6 +283,7 @@ h1 {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+h4{font-size: 1.25rem;}
 .products .cards-cont .card {
   width: 100%;
   height: 310px;

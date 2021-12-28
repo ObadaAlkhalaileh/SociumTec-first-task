@@ -49,9 +49,7 @@
           <div><span>cart item</span><span>10$</span></div>
           <i class="fas fa-trash"></i>
         </div>
-        <div class="cart-total">
-          <span>Total </span><span> 100$</span>
-        </div>
+        <div class="cart-total"><span>Total </span><span> 100$</span></div>
         <div class="cart-buttons">
           <button class="main-button">CLEAR CART</button>
           <button class="main-button pink-button">CHECKOUT</button>
@@ -99,7 +97,7 @@
         </div>
       </div>
       <div class="cards-cont">
-        <div class="card">
+        <!-- <div class="card">
           <div class="card-image">
             <img src="./cc.jpeg" alt="item" />
             <span><i class="fas fa-shopping-cart"></i></span>
@@ -108,37 +106,58 @@
             <h4>Cupcake</h4>
             <h4>10$</h4>
           </div>
-        </div>
-        <div class="card">
-          <div class="card-image">
-            <img src="./cc.jpeg" alt="item" />
-          </div>
-          <div>
-            <h4>Cupcake</h4>
-            <h4>10$</h4>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-image">
-            <img src="./cc.jpeg" alt="item" />
-          </div>
-          <div>
-            <h4>Cupcake</h4>
-            <h4>10$</h4>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-image">
-            <img src="./cc.jpeg" alt="item" />
-          </div>
-          <div>
-            <h4>Cupcake</h4>
-            <h4>10$</h4>
-          </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
     <script src="javascript.js"></script>
+    <script>
+      const productsArr = [
+        { image: "sweets-1.jpeg", desc: "Sweets Item", price: 5 },
+        { image: "cupcake-1.jpeg", desc: "Cupcake Item", price: 5 },
+        { image: "cake-1.jpeg", desc: "Cake Item", price: 5 },
+        { image: "doughnut-1.jpeg", desc: "doughnut Item", price: 5 },
+        { image: "sweets-2.jpeg", desc: "Sweets Item", price: 10 },
+        { image: "cupcake-2.jpeg", desc: "Cupcake Item", price: 10 },
+        { image: "cake-2.jpeg", desc: "Cake Item", price: 10 },
+        { image: "doughnut-2.jpeg", desc: "doughnut Item", price: 10 },
+        { image: "sweets-3.jpeg", desc: "Sweets Item", price: 15 },
+        { image: "cupcake-3.jpeg", desc: "Cupcake Item", price: 15 },
+        { image: "cake-3.jpeg", desc: "Cake Item", price: 15 },
+        { image: "doughnut-3.jpeg", desc: "doughnut Item", price: 15 },
+      ];
+      const products = document.querySelector(".cards-cont");
+
+      productsArr.forEach((product)=>{
+        
+      const card = document.createElement("div");
+      const imgDiv = document.createElement("div");
+      const img = document.createElement("img");
+      const imgSpan = document.createElement("span");
+      const imgSpanIcon = document.createElement("i");
+      const descDiv = document.createElement("div");
+      const desc = document.createElement("h4");
+      const price = document.createElement("h4");
+      
+      card.className = "card";
+      imgDiv.className = "card-image";
+      img.src = `${product.image}`;
+      img.alt= "product-image";
+      imgSpanIcon.className = "fas fa-shopping-cart";
+      desc.innerHTML=`${product.desc}`;
+      price.innerHTML=`${product.price} $`;
+
+      card.appendChild(imgDiv)
+      card.appendChild(descDiv)
+      imgDiv.appendChild(img)
+      imgDiv.appendChild(imgSpan)
+      imgSpan.appendChild(imgSpanIcon)
+      descDiv.appendChild(desc)
+      descDiv.appendChild(price)
+
+      products.appendChild(card);
+    })
+
+    </script>
   </body>
 </html>
