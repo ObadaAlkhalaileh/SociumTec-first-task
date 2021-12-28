@@ -35,17 +35,7 @@
       </div>
       <div id="cart">
         <div class="cart-item">
-          <img src="./logo.svg" alt="item" />
-          <div><span>cart item</span><span>10$</span></div>
-          <i class="fas fa-trash"></i>
-        </div>
-        <div class="cart-item">
-          <img src="./logo.svg" alt="item" />
-          <div><span>cart item</span><span>10$</span></div>
-          <i class="fas fa-trash"></i>
-        </div>
-        <div class="cart-item">
-          <img src="./logo.svg" alt="item" />
+          <img src="./sweets-1.jpeg" alt="item" />
           <div><span>cart item</span><span>10$</span></div>
           <i class="fas fa-trash"></i>
         </div>
@@ -59,14 +49,14 @@
     <div class="poster">
       <img class="bg-image" src="./bg.jpg" alt="background image" />
       <div>
-        <h1>Welcome To <span>Grandma's</span></h1>
+        <h1>Welcome To <span class="large-pink">Grandma's</span></h1>
         <button class="main-button">EXPLORE</button>
       </div>
     </div>
     <div class="about">
       <div class="about-flex">
         <div>
-          <h1>About <span>Us</span></h1>
+          <h1>About <span class="large-pink">Us</span></h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
             aliquam voluptas beatae vitae expedita consectetur nesciunt quia
@@ -76,14 +66,14 @@
           <button class="main-button">EXPLORE</button>
         </div>
         <div>
-          <img src="./sweets.jpeg" alt="sweets" />
+          <img src="./sweets-1.jpeg" alt="sweets" />
           <canvas id="canva-outline"> heeeeeeeeeey </canvas>
         </div>
       </div>
     </div>
     <div class="products">
       <div class="main-flex-container">
-        <h1>Our <span>Store</span></h1>
+        <h1>Our <span class="large-pink">Store</span></h1>
         <div class="sub-flex-container">
           <button class="main-button">ALL</button>
           <button class="main-button">CAKES</button>
@@ -111,53 +101,5 @@
     </div>
 
     <script src="javascript.js"></script>
-    <script>
-      const productsArr = [
-        { image: "sweets-1.jpeg", desc: "Sweets Item", price: 5 },
-        { image: "cupcake-1.jpeg", desc: "Cupcake Item", price: 5 },
-        { image: "cake-1.jpeg", desc: "Cake Item", price: 5 },
-        { image: "doughnut-1.jpeg", desc: "doughnut Item", price: 5 },
-        { image: "sweets-2.jpeg", desc: "Sweets Item", price: 10 },
-        { image: "cupcake-2.jpeg", desc: "Cupcake Item", price: 10 },
-        { image: "cake-2.jpeg", desc: "Cake Item", price: 10 },
-        { image: "doughnut-2.jpeg", desc: "doughnut Item", price: 10 },
-        { image: "sweets-3.jpeg", desc: "Sweets Item", price: 15 },
-        { image: "cupcake-3.jpeg", desc: "Cupcake Item", price: 15 },
-        { image: "cake-3.jpeg", desc: "Cake Item", price: 15 },
-        { image: "doughnut-3.jpeg", desc: "doughnut Item", price: 15 },
-      ];
-      const products = document.querySelector(".cards-cont");
-
-      productsArr.forEach((product)=>{
-        
-      const card = document.createElement("div");
-      const imgDiv = document.createElement("div");
-      const img = document.createElement("img");
-      const imgSpan = document.createElement("span");
-      const imgSpanIcon = document.createElement("i");
-      const descDiv = document.createElement("div");
-      const desc = document.createElement("h4");
-      const price = document.createElement("h4");
-      
-      card.className = "card";
-      imgDiv.className = "card-image";
-      img.src = `${product.image}`;
-      img.alt= "product-image";
-      imgSpanIcon.className = "fas fa-shopping-cart";
-      desc.innerHTML=`${product.desc}`;
-      price.innerHTML=`${product.price} $`;
-
-      card.appendChild(imgDiv)
-      card.appendChild(descDiv)
-      imgDiv.appendChild(img)
-      imgDiv.appendChild(imgSpan)
-      imgSpan.appendChild(imgSpanIcon)
-      descDiv.appendChild(desc)
-      descDiv.appendChild(price)
-
-      products.appendChild(card);
-    })
-
-    </script>
   </body>
 </html>
