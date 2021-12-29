@@ -1,27 +1,107 @@
 //Data
 const productsArr = [
-  { id: 1, image: "sweets-1.jpeg", desc: "Sweets Item", category:"sweets", price: 5 },
-  { id: 2, image: "cupcake-1.jpeg", desc: "Cupcake Item", category:"cupcakes", price: 5 },
-  { id: 3, image: "cake-1.jpeg", desc: "Cake Item", category:"cakes", price: 5 },
-  { id: 4, image: "doughnut-1.jpeg", desc: "doughnut Item", category:"doughnuts", price: 5 },
-  { id: 5, image: "sweets-2.jpeg", desc: "Sweets Item", category:"sweets", price: 10 },
-  { id: 6, image: "cupcake-2.jpeg", desc: "Cupcake Item", category:"cupcakes", price: 10 },
-  { id: 7, image: "cake-2.jpeg", desc: "Cake Item", category:"cakes", price: 10 },
-  { id: 8, image: "doughnut-2.jpeg", desc: "doughnut Item", category:"doughnuts", price: 10 },
-  { id: 9, image: "sweets-3.jpeg", desc: "Sweets Item", category:"sweets", price: 15 },
-  { id: 10, image: "cupcake-3.jpeg", desc: "Cupcake Item", category:"cupcakes", price: 15 },
-  { id: 11, image: "cake-3.jpeg", desc: "Cake Item", category:"cakes", price: 15 },
-  { id: 12, image: "doughnut-3.jpeg", desc: "doughnut Item", category:"doughnuts", price: 15 },
+  {
+    id: 1,
+    image: "sweets-1.jpeg",
+    desc: "Colored Sweets",
+    category: "sweets",
+    price: 5,
+  },
+  {
+    id: 2,
+    image: "cupcake-1.jpeg",
+    desc: "Mini Cupcakes",
+    category: "cupcakes",
+    price: 5,
+  },
+  {
+    id: 3,
+    image: "cake-1.jpeg",
+    desc: "Casual Cake",
+    category: "cakes",
+    price: 5,
+  },
+  {
+    id: 4,
+    image: "doughnut-1.jpeg",
+    desc: "Special Doughnut",
+    category: "doughnuts",
+    price: 5,
+  },
+  {
+    id: 5,
+    image: "sweets-2.jpeg",
+    desc: "Children Sweets",
+    category: "sweets",
+    price: 10,
+  },
+  {
+    id: 6,
+    image: "cupcake-2.jpeg",
+    desc: "Chocklate Cupcake",
+    category: "cupcakes",
+    price: 10,
+  },
+  {
+    id: 7,
+    image: "cake-2.jpeg",
+    desc: "Luxury Cake",
+    category: "cakes",
+    price: 10,
+  },
+  {
+    id: 8,
+    image: "doughnut-2.jpeg",
+    desc: "Choclate Doughnuts",
+    category: "doughnuts",
+    price: 10,
+  },
+  {
+    id: 9,
+    image: "sweets-3.jpeg",
+    desc: "Choclate Sweets",
+    category: "sweets",
+    price: 15,
+  },
+  {
+    id: 10,
+    image: "cupcake-3.jpeg",
+    desc: "Blueberry Cupcakes",
+    category: "cupcakes",
+    price: 15,
+  },
+  {
+    id: 11,
+    image: "cake-3.jpeg",
+    desc: "Birthday Cake",
+    category: "cakes",
+    price: 15,
+  },
+  {
+    id: 12,
+    image: "doughnut-3.jpeg",
+    desc: "Bear Cupcake",
+    category: "doughnuts",
+    price: 15,
+  },
 ];
 
 const cart = [];
 let cartTotal = 0;
+
+let filterResult;
 
 //render products onload
 renderProducts();
 
 //add event handler to search field
 document.querySelector("#search-field").oninput = search;
+
+document.querySelector('.products .sub-flex-container [value=all]').onclick = filter;
+document.querySelector('.products .sub-flex-container [value=cakes]').onclick = filter;
+document.querySelector('.products .sub-flex-container [value=cupcakes]').onclick = filter;
+document.querySelector('.products .sub-flex-container [value=sweets]').onclick = filter;
+document.querySelector('.products .sub-flex-container [value=doughnuts]').onclick = filter;
 
 //render products
 function renderProducts(arr = productsArr) {
@@ -145,9 +225,28 @@ function renderTotal() {
 
 //search function
 function search(e) {
-  let searchResult = productsArr.filter((item) => {
-    return item.desc.toLocaleLowerCase().includes(e.target.value.toLowerCase());
-  });
+  let searchResult = filterResult
+    ? filterResult.filter((item) => {
+        return item.desc
+          .toLocaleLowerCase()
+          .includes(e.target.value.toLowerCase());
+      })
+    : productsArr.filter((item) => {
+        return item.desc
+          .toLocaleLowerCase()
+          .includes(e.target.value.toLowerCase());
+      });
 
   renderProducts(searchResult);
+}
+
+//filter function
+function filter(e) {
+  if(e.target.value==="all")return renderProducts();
+
+  filterResult = productsArr.filter((item) => {
+    return item.category.toLocaleLowerCase() == e.target.value.toLowerCase();
+  });
+
+  renderProducts(filterResult);
 }

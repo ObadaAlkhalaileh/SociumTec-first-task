@@ -234,6 +234,7 @@ h1 {
 .products {
   background-color: #eeeeee;
   padding-bottom: 5rem;
+  min-height: 70vh;
 }
 
 .products .main-flex-container {
