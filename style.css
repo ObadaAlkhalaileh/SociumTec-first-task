@@ -70,28 +70,20 @@ header .fa-bars {
   color: black;
   transition: all 0.5s;
 }
-/* .header > img:hover ~ #cart {
-  width: 18rem;
-  visibility: visible;
-  transform: translateY(100%) rotateY(0deg);
-} */
 .visible-cart {
   width: 18rem !important;
   visibility: visible !important;
   transform: translateY(100%) rotateY(0deg) !important;
 }
-
 #cart {
   position: absolute;
   right: 0;
   bottom: 0;
   transform: translate(0%, 100%) rotateY(360deg);
-  /* transform: translate(0%, 100%); */
   background-color: rgba(255, 255, 255, 0.5);
   width: 0;
   max-height: 700px;
   visibility: hidden;
-  /* visibility: visible; */
   text-align: center;
   padding: 1.5rem;
   z-index: 1;
@@ -126,7 +118,7 @@ header .fa-bars {
   transform: scale(1.2);
 }
 
-.cart-total{
+.cart-total {
   margin-top: 1.5rem;
   font-size: 1.5rem;
   display: flex;
@@ -135,7 +127,7 @@ header .fa-bars {
   column-gap: 4rem;
 }
 
-.cart-buttons{
+.cart-buttons {
   display: flex;
   justify-content: space-between;
 }
@@ -156,6 +148,7 @@ header .fa-bars {
   font-size: 2.5rem;
   margin: 10px;
   color: white;
+  line-height: 4rem;
 }
 h1 {
   font-size: 2.5rem;
@@ -216,7 +209,7 @@ h1 {
 .about p {
   text-align: left;
 }
-.large-pink{
+.large-pink {
   font-size: 4rem;
   color: var(--PrimaryPink);
 }
@@ -293,7 +286,9 @@ h1 {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-h4{font-size: 1.25rem;}
+h4 {
+  font-size: 1.25rem;
+}
 .products .cards-cont .card {
   width: 100%;
   height: 310px;
