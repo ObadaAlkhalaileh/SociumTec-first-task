@@ -70,22 +70,28 @@ header .fa-bars {
   color: black;
   transition: all 0.5s;
 }
-.header > img:hover ~ #cart {
+/* .header > img:hover ~ #cart {
   width: 18rem;
   visibility: visible;
   transform: translateY(100%) rotateY(0deg);
+} */
+.visible-cart {
+  width: 18rem !important;
+  visibility: visible !important;
+  transform: translateY(100%) rotateY(0deg) !important;
 }
+
 #cart {
   position: absolute;
   right: 0;
   bottom: 0;
-  /* transform: translate(0%, 100%) rotateY(360deg); */
-  transform: translate(0%, 100%);
+  transform: translate(0%, 100%) rotateY(360deg);
+  /* transform: translate(0%, 100%); */
   background-color: rgba(255, 255, 255, 0.5);
-  /* width: 0; */
+  width: 0;
   max-height: 700px;
-  /* visibility: hidden; */
-  visibility: visible;
+  visibility: hidden;
+  /* visibility: visible; */
   text-align: center;
   padding: 1.5rem;
   z-index: 1;

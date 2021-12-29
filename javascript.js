@@ -86,7 +86,7 @@ const productsArr = [
   },
 ];
 
-const cart = [];
+let cart = [];
 let cartTotal = 0;
 
 let filterResult;
@@ -94,16 +94,7 @@ let filterResult;
 //render products onload
 renderProducts();
 
-//add event handler to search field
-document.querySelector("#search-field").oninput = search;
-
-document.querySelector('.products .sub-flex-container [value=all]').onclick = filter;
-document.querySelector('.products .sub-flex-container [value=cakes]').onclick = filter;
-document.querySelector('.products .sub-flex-container [value=cupcakes]').onclick = filter;
-document.querySelector('.products .sub-flex-container [value=sweets]').onclick = filter;
-document.querySelector('.products .sub-flex-container [value=doughnuts]').onclick = filter;
-
-//render products
+//render products function
 function renderProducts(arr = productsArr) {
   const products = document.createElement("div");
   products.className = "cards-cont";
@@ -242,7 +233,7 @@ function search(e) {
 
 //filter function
 function filter(e) {
-  if(e.target.value==="all")return renderProducts();
+  if (e.target.value === "all") return renderProducts();
 
   filterResult = productsArr.filter((item) => {
     return item.category.toLocaleLowerCase() == e.target.value.toLowerCase();
@@ -250,3 +241,52 @@ function filter(e) {
 
   renderProducts(filterResult);
 }
+
+//remove cart item function
+function clearCart() {
+  //remove cart items from document
+  cart.forEach((item) => {
+    document.querySelector(".cart-item").remove();
+  });
+
+  //clear cart array
+  cart = [];
+
+  //reset total
+  cartTotal = 0;
+
+  //render updated total
+  renderTotal();
+}
+
+//show/hide cart function
+function toggleCart() {
+  const cartClass = document.querySelector("#cart");
+
+  cartClass.className
+    ? (cartClass.className = "")
+    : (cartClass.className = "visible-cart");
+}
+
+//add event handler to search field
+document.querySelector("#search-field").oninput = search;
+
+//add event handlers to filter buttons
+document.querySelector(".products .sub-flex-container [value=all]").onclick =
+  filter;
+document.querySelector(".products .sub-flex-container [value=cakes]").onclick =
+  filter;
+document.querySelector(
+  ".products .sub-flex-container [value=cupcakes]"
+).onclick = filter;
+document.querySelector(".products .sub-flex-container [value=sweets]").onclick =
+  filter;
+document.querySelector(
+  ".products .sub-flex-container [value=doughnuts]"
+).onclick = filter;
+
+//add clear cart event handler
+document.querySelector("#clear-cart").onclick = clearCart;
+
+//add toggle cart handler
+document.querySelector('#cart-button').onclick = toggleCart;
