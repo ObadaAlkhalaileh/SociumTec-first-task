@@ -268,6 +268,24 @@ function toggleCart() {
     : (cartClass.className = "visible-cart");
 }
 
+//show/hide nav function (mobile)
+function toggleNav(){
+  const navBar=document.querySelector('.header .small-part1')
+  const header= document.querySelector('.header')
+
+  if(navBar.style.display==='none'||navBar.style.display===""){
+    header.style.maxHeight="300px"
+    setTimeout(()=>navBar.style.display="block",500)
+    
+  }
+    else{navBar.style.display="none";
+    header.style.maxHeight="100px"
+
+  }
+
+  // document.querySelector('.header').appendChild(navBar)
+}
+
 //add event handler to search field
 document.querySelector("#search-field").oninput = search;
 
@@ -290,3 +308,6 @@ document.querySelector("#clear-cart").onclick = clearCart;
 
 //add toggle cart handler
 document.querySelector('#cart-button').onclick = toggleCart;
+
+//add nav bar in mobile mode
+document.querySelector('header .fa-bars').onclick = toggleNav;

@@ -15,8 +15,9 @@
     <title>Cart project</title>
   </head>
   <body>
-    <header class="header">
+    <header id="header" class="header">
       <img src="./logo.svg" alt="logo image" />
+      <i class="fas fa-bars"></i>
       <div class="header-part">
         <div class="small-part1">
           <ul>
@@ -31,7 +32,6 @@
             <i class="fas fa-shopping-cart"></i> &nbsp; <span>Cart is empty :(</span> 
           </div>
         </div>
-        <i class="fas fa-bars"></i>
       </div>
       <div id="cart">
         <!-- <div class="cart-item">
@@ -50,7 +50,7 @@
       <img class="bg-image" src="./bg.jpg" alt="background image" />
       <div>
         <h1>Welcome To <span class="large-pink">Grandma's</span></h1>
-        <button class="main-button">EXPLORE</button>
+        <a class="main-button" href="#products">EXPLORE</a>
       </div>
     </div>
     <div class="about">
@@ -63,15 +63,15 @@
             deserunt asperiores facere fuga dicta fugiat corrupti et omnis porro
             at dolorum! Ad!
           </p>
-          <button class="main-button">EXPLORE</button>
+          <a class="main-button" href="#header">EXPLORE</a>
         </div>
         <div>
           <img src="./sweets-1.jpeg" alt="sweets" />
-          <canvas id="canva-outline"> heeeeeeeeeey </canvas>
+          <canvas id="canva-outline"> </canvas>
         </div>
       </div>
     </div>
-    <div class="products">
+    <div id="products" class="products">
       <div class="main-flex-container">
         <h1>Our <span class="large-pink">Store</span></h1>
         <div class="sub-flex-container">
