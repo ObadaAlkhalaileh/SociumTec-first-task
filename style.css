@@ -233,6 +233,7 @@ h1 {
 }
 .products {
   background-color: #eeeeee;
+  padding-bottom: 5rem;
 }
 
 .products .main-flex-container {
